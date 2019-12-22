@@ -89,8 +89,9 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,1,1   =>  false
  *   10,10,10 =>  true
  */
-function isTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isTriangle(a, b, c) {
+  if ((a + b > c) && (a + c > b) && (c + b > a)) return true;
+  return false;
 }
 
 
@@ -277,8 +278,18 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+  const numbersArray = num.toString().split('');
+  let second;
+  let answer = 0;
+  for (let i = 0; i < numbersArray.length; i += 1) {
+    answer += +numbersArray[i];
+  }
+  if (answer.toString().split('').length > 1) {
+    second = answer;
+    return getDigitalRoot(second);
+  }
+  return answer;
 }
 
 
@@ -303,8 +314,15 @@ function getDigitalRoot(/* num */) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
-  throw new Error('Not implemented');
+function isBracketsBalanced(str) {
+  let tempStr = str;
+  if (tempStr.length % 2 !== 0) return false;
+
+  while (tempStr.includes('()') || tempStr.includes('[]') || tempStr.includes('{}') || tempStr.includes('<>')) {
+    tempStr = tempStr.replace('()', '').replace('[]', '').replace('{}', '').replace('<>', '');
+  }
+  if (tempStr.length === 0) return true;
+  return false;
 }
 
 
