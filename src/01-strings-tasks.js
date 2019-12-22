@@ -83,8 +83,8 @@ function extractNameFromTemplate(value) {
  *   'John Doe'  => 'J'
  *   'cat'       => 'c'
  */
-function getFirstChar(/* value */) {
-  throw new Error('Not implemented');
+function getFirstChar(value) {
+  return value.charAt(0);
 }
 
 /**
@@ -98,8 +98,9 @@ function getFirstChar(/* value */) {
  *   'cat'              => 'cat'
  *   '\tHello, World! ' => 'Hello, World!'
  */
-function removeLeadingAndTrailingWhitespaces(/* value */) {
-  throw new Error('Not implemented');
+function removeLeadingAndTrailingWhitespaces(value) {
+  const answer = value.replace(/\s/g, '');
+  return answer.replace(/,/g, ', ');
 }
 
 /**
@@ -113,8 +114,8 @@ function removeLeadingAndTrailingWhitespaces(/* value */) {
  *   'A', 5  => 'AAAAA'
  *   'cat', 3 => 'catcatcat'
  */
-function repeatString(/* value, count */) {
-  throw new Error('Not implemented');
+function repeatString(value, count) {
+  return value.repeat([count]);
 }
 
 /**
@@ -129,8 +130,8 @@ function repeatString(/* value, count */) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  return str.replace(value, '');
 }
 
 /**
@@ -144,8 +145,8 @@ function removeFirstOccurrences(/* str, value */) {
  *   '<span>' => 'span'
  *   '<a>' => 'a'
  */
-function unbracketTag(/* str */) {
-  throw new Error('Not implemented');
+function unbracketTag(str) {
+  return str.replace('<', '').replace('>', '');
 }
 
 
@@ -159,8 +160,8 @@ function unbracketTag(/* str */) {
  *   'Thunderstruck' => 'THUNDERSTRUCK'
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
-function convertToUpperCase(/* str */) {
-  throw new Error('Not implemented');
+function convertToUpperCase(str) {
+  return str.toUpperCase();
 }
 
 /**
@@ -243,8 +244,10 @@ function encodeToRot13(/* str */) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  if (typeof (value) === 'string') return true;
+  if (value instanceof String) return true;
+  return false;
 }
 
 
@@ -272,8 +275,169 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  let answer = 0;
+  switch (value) {
+    case 'A♣':
+      answer = 0;
+      break;
+    case '2♣':
+      answer = 1;
+      break;
+    case '3♣':
+      answer = 2;
+      break;
+    case '4♣':
+      answer = 3;
+      break;
+    case '5♣':
+      answer = 4;
+      break;
+    case '6♣':
+      answer = 5;
+      break;
+    case '7♣':
+      answer = 6;
+      break;
+    case '8♣':
+      answer = 7;
+      break;
+    case '9♣':
+      answer = 8;
+      break;
+    case '10♣':
+      answer = 9;
+      break;
+    case 'J♣':
+      answer = 10;
+      break;
+    case 'Q♣':
+      answer = 11;
+      break;
+    case 'K♣':
+      answer = 12;
+      break;
+    case 'A♦':
+      answer = 13;
+      break;
+    case '2♦':
+      answer = 14;
+      break;
+    case '3♦':
+      answer = 15;
+      break;
+    case '4♦':
+      answer = 16;
+      break;
+    case '5♦':
+      answer = 17;
+      break;
+    case '6♦':
+      answer = 18;
+      break;
+    case '7♦':
+      answer = 19;
+      break;
+    case '8♦':
+      answer = 20;
+      break;
+    case '9♦':
+      answer = 21;
+      break;
+    case '10♦':
+      answer = 22;
+      break;
+    case 'J♦':
+      answer = 23;
+      break;
+    case 'Q♦':
+      answer = 24;
+      break;
+    case 'K♦':
+      answer = 25;
+      break;
+    case 'A♥':
+      answer = 26;
+      break;
+    case '2♥':
+      answer = 27;
+      break;
+    case '3♥':
+      answer = 28;
+      break;
+    case '4♥':
+      answer = 29;
+      break;
+    case '5♥':
+      answer = 30;
+      break;
+    case '6♥':
+      answer = 31;
+      break;
+    case '7♥':
+      answer = 32;
+      break;
+    case '8♥':
+      answer = 33;
+      break;
+    case '9♥':
+      answer = 34;
+      break;
+    case '10♥':
+      answer = 35;
+      break;
+    case 'J♥':
+      answer = 36;
+      break;
+    case 'Q♥':
+      answer = 37;
+      break;
+    case 'K♥':
+      answer = 38;
+      break;
+    case 'A♠':
+      answer = 39;
+      break;
+    case '2♠':
+      answer = 40;
+      break;
+    case '3♠':
+      answer = 41;
+      break;
+    case '4♠':
+      answer = 42;
+      break;
+    case '5♠':
+      answer = 43;
+      break;
+    case '6♠':
+      answer = 44;
+      break;
+    case '7♠':
+      answer = 45;
+      break;
+    case '8♠':
+      answer = 46;
+      break;
+    case '9♠':
+      answer = 47;
+      break;
+    case '10♠':
+      answer = 48;
+      break;
+    case 'J♠':
+      answer = 49;
+      break;
+    case 'Q♠':
+      answer = 50;
+      break;
+    case 'K♠':
+      answer = 51;
+      break;
+    default:
+      answer = 0;
+  }
+  return answer;
 }
 
 
