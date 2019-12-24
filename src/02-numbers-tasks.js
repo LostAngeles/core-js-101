@@ -170,7 +170,7 @@ function getParallelipidedDiagonal(a, b, c) {
  * @return {number}
  *
  * @example:
- *   1234, 0  => 1234
+ *   1234, 0  => 1234 4321
  *   1234, 1  => 1230
  *   1234, 2  => 1200
  *   1234, 3  => 1000
@@ -179,8 +179,20 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  const arrayNum = String(num).split('');
+  arrayNum.reverse();
+  for (let j = 0; j < arrayNum.length; j += 1) {
+    arrayNum[j] = +arrayNum[j];
+  }
+  for (let i = 0; i < pow; i += 1) {
+    if (arrayNum[i] >= 5) {
+      arrayNum[i + 1] += 1;
+      arrayNum[i] = 0;
+    }
+    arrayNum[i] = 0;
+  }
+  return arrayNum.reverse().join('');
 }
 
 /**
