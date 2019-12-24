@@ -227,8 +227,180 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  const arr = str.split('');
+  for (let i = 0; i < arr.length; i += 1) {
+    switch (arr[i]) {
+      case 'A':
+        arr[i] = 'N';
+        break;
+      case 'B':
+        arr[i] = 'O';
+        break;
+      case 'C':
+        arr[i] = 'P';
+        break;
+      case 'D':
+        arr[i] = 'Q';
+        break;
+      case 'E':
+        arr[i] = 'R';
+        break;
+      case 'F':
+        arr[i] = 'S';
+        break;
+      case 'G':
+        arr[i] = 'T';
+        break;
+      case 'H':
+        arr[i] = 'U';
+        break;
+      case 'I':
+        arr[i] = 'V';
+        break;
+      case 'J':
+        arr[i] = 'W';
+        break;
+      case 'K':
+        arr[i] = 'X';
+        break;
+      case 'L':
+        arr[i] = 'Y';
+        break;
+      case 'M':
+        arr[i] = 'Z';
+        break;
+      case 'N':
+        arr[i] = 'A';
+        break;
+      case 'O':
+        arr[i] = 'B';
+        break;
+      case 'P':
+        arr[i] = 'C';
+        break;
+      case 'Q':
+        arr[i] = 'D';
+        break;
+      case 'R':
+        arr[i] = 'E';
+        break;
+      case 'S':
+        arr[i] = 'F';
+        break;
+      case 'T':
+        arr[i] = 'G';
+        break;
+      case 'U':
+        arr[i] = 'H';
+        break;
+      case 'V':
+        arr[i] = 'I';
+        break;
+      case 'W':
+        arr[i] = 'J';
+        break;
+      case 'X':
+        arr[i] = 'K';
+        break;
+      case 'Y':
+        arr[i] = 'L';
+        break;
+      case 'Z':
+        arr[i] = 'M';
+        break;
+      case 'a':
+        arr[i] = 'n';
+        break;
+      case 'b':
+        arr[i] = 'o';
+        break;
+      case 'c':
+        arr[i] = 'p';
+        break;
+      case 'd':
+        arr[i] = 'q';
+        break;
+      case 'e':
+        arr[i] = 'r';
+        break;
+      case 'f':
+        arr[i] = 's';
+        break;
+      case 'g':
+        arr[i] = 't';
+        break;
+      case 'h':
+        arr[i] = 'u';
+        break;
+      case 'i':
+        arr[i] = 'v';
+        break;
+      case 'j':
+        arr[i] = 'w';
+        break;
+      case 'k':
+        arr[i] = 'x';
+        break;
+      case 'l':
+        arr[i] = 'y';
+        break;
+      case 'm':
+        arr[i] = 'z';
+        break;
+      case 'n':
+        arr[i] = 'a';
+        break;
+      case 'o':
+        arr[i] = 'b';
+        break;
+      case 'p':
+        arr[i] = 'c';
+        break;
+      case 'q':
+        arr[i] = 'd';
+        break;
+      case 'r':
+        arr[i] = 'e';
+        break;
+      case 's':
+        arr[i] = 'f';
+        break;
+      case 't':
+        arr[i] = 'g';
+        break;
+      case 'u':
+        arr[i] = 'h';
+        break;
+      case 'v':
+        arr[i] = 'i';
+        break;
+      case 'w':
+        arr[i] = 'j';
+        break;
+      case 'x':
+        arr[i] = 'k';
+        break;
+      case 'y':
+        arr[i] = 'l';
+        break;
+      case 'z':
+        arr[i] = 'm';
+        break;
+      case ' ':
+        arr[i] = ' ';
+        break;
+      case '?':
+        arr[i] = '?';
+        break;
+      case '!':
+        arr[i] = '!';
+        break;
+      default:
+        arr[i] = '♥';
+    }
+  }
+  return arr.join('');
 }
 
 /**
